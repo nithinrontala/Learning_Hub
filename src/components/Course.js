@@ -1,6 +1,7 @@
 import React from 'react';
 import CourseNavbar from './CourseNavbar';
 import CourseSidebar from './CourseSidebar';
+import CourseHeader from './CourseHeader';
 import './CourseNavbar.css';
 import './CourseSidebar.css';
 
@@ -10,8 +11,9 @@ function Course() {
       <CourseNavbar />
       <div style={{ display: 'flex', gap: '2rem', marginTop: '2rem' }}>
         <CourseSidebar />
-        {/* Add your main course content here */}
-        <div style={{ flex: 1 }}></div>
+        <div style={{ flex: 1 }}>
+          <CourseHeader />
+        </div>
       </div>
     </>
   );
