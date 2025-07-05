@@ -18,6 +18,22 @@
   gap: 1.1rem;
 }
 
+.auth-form.wide {
+  max-width: 500px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 2.5rem 2.5rem 2rem 2.5rem;
+  gap: 1.3rem;
+}
+
+.auth-title {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+  color: #222;
+  text-align: center;
+}
+
 .auth-form h2 {
   margin-bottom: 0.5rem;
   color: #222;
@@ -32,6 +48,12 @@
   margin-bottom: 0.2rem;
 }
 
+.auth-form.wide label {
+  font-size: 1.08rem;
+  color: #222;
+  margin-bottom: 0.2rem;
+}
+
 .auth-form input {
   padding: 0.7rem 1rem;
   border-radius: 8px;
@@ -42,8 +64,26 @@
   transition: border 0.2s;
 }
 
+.auth-form.wide input {
+  background: #f3f5f8;
+  border: none;
+  border-radius: 8px;
+  padding: 1.1rem 1.2rem;
+  font-size: 1.08rem;
+  margin-bottom: 0.2rem;
+  color: #222;
+  box-shadow: none;
+  outline: none;
+  transition: border 0.2s;
+}
+
 .auth-form input:focus {
   border: 1.5px solid #007bff;
+}
+
+.auth-form.wide input:focus {
+  border: 1.5px solid #007bff;
+  background: #fff;
 }
 
 .auth-btn {
@@ -59,24 +99,60 @@
   transition: background 0.2s;
 }
 
+.auth-btn.wide {
+  width: 100%;
+  background: #1086ff;
+  color: #fff;
+  font-size: 1.15rem;
+  font-weight: 600;
+  border-radius: 8px;
+  padding: 1rem 0;
+  margin-top: 0.7rem;
+  margin-bottom: 0.2rem;
+  border: none;
+  transition: background 0.2s;
+}
+
 .auth-btn:hover {
+  background: #0056b3;
+}
+
+.auth-btn.wide:hover {
   background: #0056b3;
 }
 
 .auth-switch {
   text-align: center;
-  margin-top: 0.7rem;
+  margin-top: 1.2rem;
   color: #7b8794;
-  font-size: 0.98rem;
+  font-size: 1.05rem;
 }
 
 .auth-switch a {
-  color: #007bff;
+  color: #1086ff;
   text-decoration: none;
   font-weight: 500;
   margin-left: 0.2rem;
 }
 
 .auth-switch a:hover {
+  text-decoration: underline;
+}
+
+.auth-row {
+  display: flex;
+  justify-content: flex-start;
+  margin-bottom: 0.2rem;
+}
+
+.forgot-link {
+  color: #7b8794;
+  font-size: 1rem;
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.forgot-link:hover {
+  color: #1086ff;
   text-decoration: underline;
 }

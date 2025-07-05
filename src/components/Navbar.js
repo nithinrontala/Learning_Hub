@@ -1,21 +1,23 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import './Navbar.css';
 
 function Navbar() {
   return (
     <nav className="navbar">
-      <div className="navbar-logo">
-        <span className="logo-icon">&#128187;</span> {/* Developer/tech icon */}
+      <Link to="/" className="navbar-logo" style={{textDecoration: 'none'}}>
+        <span className="logo-icon">&#128187;</span>
         <span className="logo-text">Learning Hub</span>
-      </div>
+      </Link>
       <ul className="navbar-links">
+        <li><Link to="/">Home</Link></li>
         <li><a href="#courses">Courses</a></li>
         <li><a href="#about">About</a></li>
         <li><a href="#contact">Contact</a></li>
       </ul>
       <div className="navbar-actions">
-        <a href="#signup" className="btn btn-signup">Sign Up</a>
-        <a href="#login" className="btn btn-login">Login</a>
+        <Link to="/signup" className="btn btn-signup">Sign Up</Link>
+        <Link to="/login" className="btn btn-login">Login</Link>
       </div>
     </nav>
   );
