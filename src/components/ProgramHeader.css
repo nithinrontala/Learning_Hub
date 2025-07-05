@@ -1,0 +1,57 @@
+/*
+  NOTE: Do not use any CSS from other files. Only use styles from ProgramHeader.css for this component, now and in the future.
+*/
+
+.program-header-container {
+  background: #fff;
+  padding: 40px 32px 24px 32px;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.03);
+  margin: 32px auto;
+  max-width: 900px;
+}
+
+.program-header-breadcrumb {
+  color: #6b7280;
+  font-size: 15px;
+  margin-bottom: 18px;
+}
+.program-header-link {
+  color: #3b82f6;
+  cursor: pointer;
+}
+.program-header-separator {
+  margin: 0 6px;
+}
+.program-header-category {
+  font-weight: 600;
+}
+
+.program-header-title {
+  font-size: 2.2rem;
+  font-weight: 700;
+  margin-bottom: 10px;
+  color: #22223b;
+}
+
+.program-header-description {
+  color: #4b5563;
+  font-size: 1.08rem;
+  margin-bottom: 28px;
+}
+
+.program-header-details {
+  display: flex;
+  gap: 48px;
+  border-top: 1px solid #e5e7eb;
+  padding-top: 18px;
+  font-size: 1rem;
+}
+.program-header-detail-label {
+  color: #6b7280;
+  font-size: 0.98rem;
+}
+.program-header-detail-value {
+  font-weight: 500;
+  color: #22223b;
+}

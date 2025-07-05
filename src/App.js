@@ -7,6 +7,7 @@ import Footer from './components/Footer';
 import Login from './components/Login';
 import Signup from './components/Signup';
 import Course from './components/Course';
+import ProgramHeader from './components/ProgramHeader';
 import './App.css';
 
 function App() {
@@ -37,6 +38,7 @@ function App() {
             </>
           } />
           <Route path="/courses" element={<Course />} />
+          <Route path="/program-header" element={<ProgramHeader />} />
         </Routes>
       </div>
     </Router>
