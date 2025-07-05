@@ -1,0 +1,100 @@
+.course-navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.5rem 2rem;
+  background: #fff;
+  border-bottom: 1px solid #e0e0e0;
+  flex-wrap: wrap;
+}
+
+.course-navbar-left {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+
+.logo-text {
+  font-weight: bold;
+  font-size: 1.3rem;
+}
+
+.course-navbar-links span {
+  margin-right: 2rem;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+.course-navbar-right {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.course-navbar-search {
+  padding: 0.5rem 1.5rem;
+  border-radius: 8px;
+  border: 1px solid #e0e0e0;
+  background: #f5f7fa;
+  min-width: 120px;
+}
+
+.course-navbar-wishlist {
+  font-weight: bold;
+  background: #f5f7fa;
+  border: none;
+  border-radius: 8px;
+  padding: 0.5rem 1.5rem;
+  cursor: pointer;
+}
+
+.course-navbar-bell {
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+.course-navbar-profile {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+}
+
+@media (max-width: 900px) {
+  .course-navbar {
+    flex-direction: column;
+    align-items: stretch;
+    padding: 1rem;
+  }
+  .course-navbar-left, .course-navbar-right {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+  }
+  .course-navbar-right {
+    align-items: flex-end;
+  }
+  .course-navbar-links span {
+    margin-right: 1rem;
+  }
+  .course-navbar-search {
+    min-width: 80px;
+    width: 100%;
+  }
+}
+
+@media (max-width: 600px) {
+  .course-navbar {
+    padding: 0.5rem;
+  }
+  .logo-text {
+    font-size: 1rem;
+  }
+  .course-navbar-links span {
+    font-size: 0.95rem;
+    margin-right: 0.5rem;
+  }
+  .course-navbar-profile {
+    width: 28px;
+    height: 28px;
+  }
+}
