@@ -1,23 +1,38 @@
 // NOTE: Do not use any CSS from other files. Only use styles from ProgramHeader.css for this component, now and in the future.
 import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
 import CourseNavbar from './CourseNavbar';
 import './ProgramHeader.css';
+import courses from './coursesData';
 
-const mlCourse = {
-  title: 'Machine Learning Basics',
-  description: 'Start your journey into machine learning with foundational concepts and hands-on projects.',
-  duration: '5 weeks',
-  startDate: '2025-07-15',
-  category: 'Technology',
-  programDescription: `Gain a solid foundation in machine learning by exploring key concepts such as supervised and unsupervised learning, model evaluation, and feature engineering. This program emphasizes practical skills through hands-on projects, enabling you to build, train, and deploy basic machine learning models using real-world datasets. This course also introduces you to the core principles of machine learning, including data preprocessing, algorithm selection, and performance metrics. You’ll work with popular tools and libraries, and develop the ability to solve classification and regression problems, preparing you for more advanced studies in AI.`
+const getEndDate = (startDate, duration) => {
+  const weeks = parseInt(duration);
+  const start = new Date(startDate);
+  const end = new Date(start);
+  end.setDate(start.getDate() + weeks * 7);
+  return end.toISOString().slice(0, 10);
 };
 
 const ProgramHeader = () => {
   const navigate = useNavigate();
+  const { id } = useParams();
   const [wishlisted, setWishlisted] = useState(false);
+  const course = courses.find(c => String(c.id) === String(id));
+
+  if (!course) {
+    return (
+      <div className="program-header-container">
+        <button className="program-header-back-btn" onClick={() => navigate('/courses')}>&#8592;</button>
+        <h1>Course Not Found</h1>
+        <p>The course you are looking for does not exist.</p>
+      </div>
+    );
+  }
+
+  const endDate = getEndDate(course.startDate, course.duration);
   return (
-    <div>
+    <div style={{ position: 'relative', minHeight: '100vh' }}>
+      <div className="program-header-bg" />
       <CourseNavbar />
       <div className="program-header-container">
         <button
@@ -28,12 +43,10 @@ const ProgramHeader = () => {
           &#8592;
         </button>
         <nav className="program-header-breadcrumb">
-          {/* <span className="program-header-link">Programs</span> */}
-          {/* <span className="program-header-separator">/</span> */}
-          {/* <span className="program-header-category">Machine Learning</span> */}
+          {/* Breadcrumbs can be added here if needed */}
         </nav>
         <h1 className="program-header-title">
-          {mlCourse.title}
+          {course.title}
           <span
             className="program-header-wishlist"
             title={wishlisted ? 'Remove from Wishlist' : 'Add to Wishlist'}
@@ -47,26 +60,26 @@ const ProgramHeader = () => {
           </span>
         </h1>
         <p className="program-header-description">
-          {mlCourse.description}
+          {course.description}
         </p>
         <div className="program-header-details">
           <div className="program-header-details-row">
             <div style={{ minWidth: '180px' }}>
               <div className="program-header-detail-label">Category</div>
-              <div className="program-header-detail-value">{mlCourse.category}</div>
-              <div className="program-header-details-startdate" style={{ marginTop: '30px' }}>
-                <div className="program-header-detail-label">Start Date</div>
-                <div className="program-header-detail-value">{mlCourse.startDate}</div>
-              </div>
+              <div className="program-header-detail-value">{course.category}</div>
+              <div className="program-header-detail-label" style={{ marginTop: '30px' }}>Start Date</div>
+              <div className="program-header-detail-value">{course.startDate}</div>
             </div>
             <div>
               <div className="program-header-detail-label">Duration</div>
-              <div className="program-header-detail-value">{mlCourse.duration}</div>
+              <div className="program-header-detail-value">{course.duration}</div>
+              <div className="program-header-detail-label" style={{ marginTop: '30px' }}>End Date</div>
+              <div className="program-header-detail-value">{endDate}</div>
             </div>
           </div>
         </div>
         <h2 className="program-header-section-title">Program Description</h2>
-        <p className="program-header-section-desc">{mlCourse.programDescription}</p>
+        <p className="program-header-section-desc">{course.programDescription}</p>
         <button className="program-header-apply-btn">Apply Now</button>
       </div>
     </div>
