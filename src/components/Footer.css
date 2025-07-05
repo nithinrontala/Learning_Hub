@@ -1,0 +1,46 @@
+.footer {
+  margin-top: 3rem;
+  padding: 2.5rem 0 1.2rem 0;
+  background: none;
+  text-align: center;
+}
+
+.footer-links {
+  display: flex;
+  justify-content: center;
+  gap: 7vw;
+  margin-bottom: 1.2rem;
+}
+
+.footer-links a {
+  color: #7b8794;
+  text-decoration: none;
+  font-size: 1.08rem;
+  transition: color 0.2s;
+}
+
+.footer-links a:hover {
+  color: #007bff;
+}
+
+.footer-social {
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+  margin-bottom: 1.2rem;
+}
+
+.footer-icon svg {
+  vertical-align: middle;
+  transition: fill 0.2s;
+}
+
+.footer-icon:hover svg path {
+  fill: #007bff;
+}
+
+.footer-copy {
+  color: #7b8794;
+  font-size: 1.05rem;
+  margin-top: 0.5rem;
+}
