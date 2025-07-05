@@ -38,7 +38,7 @@ function App() {
             </>
           } />
           <Route path="/courses" element={<Course />} />
-          <Route path="/program-header" element={<ProgramHeader />} />
+          <Route path="/program/:id" element={<ProgramHeader />} />
         </Routes>
       </div>
     </Router>

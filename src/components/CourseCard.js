@@ -15,15 +15,13 @@ function CourseCard({ course }) {
   const navigate = useNavigate();
 
   const handleClick = () => {
-    if (course.title === 'Machine Learning Basics') {
-      navigate('/program-header');
-    }
+    navigate(`/program/${course.id}`);
   };
 
   const endDate = getEndDate(course.startDate, course.duration);
 
   return (
-    <div className="course-card" onClick={handleClick} style={{ cursor: course.title === 'Machine Learning Basics' ? 'pointer' : 'default' }}>
+    <div className="course-card" onClick={handleClick} style={{ cursor: 'pointer' }}>
       <img src={course.image} alt={course.title} className="course-card-image" />
       <div className="course-card-content">
         <h3 className="course-card-title">{course.title}</h3>
