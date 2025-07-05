@@ -28,7 +28,7 @@ function FeaturedCourses() {
       <h2>Featured Courses</h2>
       <div className="courses-list">
         {courses.map((course, idx) => (
-          <div className="course-card" key={idx}>
+          <div className="Featured-course-card" key={idx}>
             <div className="course-info">
               <div className="course-duration">Duration: {course.duration}</div>
               <div className="course-title">{course.title}</div>
