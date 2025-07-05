@@ -3,6 +3,14 @@ import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import './CourseCard.css';
 
+function getEndDate(startDate, duration) {
+  const weeks = parseInt(duration);
+  const start = new Date(startDate);
+  const end = new Date(start);
+  end.setDate(start.getDate() + weeks * 7);
+  return end.toISOString().slice(0, 10);
+}
+
 function CourseCard({ course }) {
   const navigate = useNavigate();
 
@@ -11,6 +19,8 @@ function CourseCard({ course }) {
       navigate('/program-header');
     }
   };
+
+  const endDate = getEndDate(course.startDate, course.duration);
 
   return (
     <div className="course-card" onClick={handleClick} style={{ cursor: course.title === 'Machine Learning Basics' ? 'pointer' : 'default' }}>
@@ -22,6 +32,7 @@ function CourseCard({ course }) {
           <span className="course-card-duration">{course.duration}</span>
           <span className="course-card-date">Start: {course.startDate}</span>
         </div>
+        <div className="course-card-enddate">End: {endDate}</div>
       </div>
     </div>
   );

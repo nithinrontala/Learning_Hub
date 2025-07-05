@@ -13,11 +13,23 @@ const mlCourse = {
   programDescription: `Gain a solid foundation in machine learning by exploring key concepts such as supervised and unsupervised learning, model evaluation, and feature engineering. This program emphasizes practical skills through hands-on projects, enabling you to build, train, and deploy basic machine learning models using real-world datasets. This course also introduces you to the core principles of machine learning, including data preprocessing, algorithm selection, and performance metrics. You’ll work with popular tools and libraries, and develop the ability to solve classification and regression problems, preparing you for more advanced studies in AI.`
 };
 
+const getEndDate = (startDate, duration) => {
+  // duration: '5 weeks' => 5
+  const weeks = parseInt(duration);
+  const start = new Date(startDate);
+  const end = new Date(start);
+  end.setDate(start.getDate() + weeks * 7);
+  // Format as YYYY-MM-DD
+  return end.toISOString().slice(0, 10);
+};
+
 const ProgramHeader = () => {
   const navigate = useNavigate();
   const [wishlisted, setWishlisted] = useState(false);
+  const endDate = getEndDate(mlCourse.startDate, mlCourse.duration);
   return (
-    <div>
+    <div style={{ position: 'relative', minHeight: '100vh' }}>
+      <div className="program-header-bg" />
       <CourseNavbar />
       <div className="program-header-container">
         <button
@@ -54,14 +66,14 @@ const ProgramHeader = () => {
             <div style={{ minWidth: '180px' }}>
               <div className="program-header-detail-label">Category</div>
               <div className="program-header-detail-value">{mlCourse.category}</div>
-              <div className="program-header-details-startdate" style={{ marginTop: '30px' }}>
-                <div className="program-header-detail-label">Start Date</div>
-                <div className="program-header-detail-value">{mlCourse.startDate}</div>
-              </div>
+              <div className="program-header-detail-label" style={{ marginTop: '30px' }}>Start Date</div>
+              <div className="program-header-detail-value">{mlCourse.startDate}</div>
             </div>
             <div>
               <div className="program-header-detail-label">Duration</div>
               <div className="program-header-detail-value">{mlCourse.duration}</div>
+              <div className="program-header-detail-label" style={{ marginTop: '30px' }}>End Date</div>
+              <div className="program-header-detail-value">{endDate}</div>
             </div>
           </div>
         </div>

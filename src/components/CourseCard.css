@@ -47,3 +47,12 @@
   font-size: 0.9rem;
   color: #888;
 }
+
+.course-card-enddate {
+  font-size: 0.9rem;
+  color: #888;
+  font-family: inherit;
+  margin-top: 0.2rem;
+  font-weight: 400;
+  text-align: right;
+}
