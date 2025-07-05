@@ -1,0 +1,6 @@
+.course-list {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.2rem 2rem;
+  margin-top: 1.5rem;
+}
