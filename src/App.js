@@ -6,24 +6,38 @@ import FeaturedCourses from './components/FeaturedCourses';
 import Footer from './components/Footer';
 import Login from './components/Login';
 import Signup from './components/Signup';
+import Course from './components/Course';
 import './App.css';
 
 function App() {
   return (
     <Router>
       <div className="App">
-        <Navbar />
         <Routes>
           <Route path="/" element={
             <>
+              <Navbar />
               <Hero />
               <FeaturedCourses />
+              <Footer />
             </>
           } />
-          <Route path="/login" element={<Login />} />
-          <Route path="/signup" element={<Signup />} />
+          <Route path="/login" element={
+            <>
+              <Navbar />
+              <Login />
+              <Footer />
+            </>
+          } />
+          <Route path="/signup" element={
+            <>
+              <Navbar />
+              <Signup />
+              <Footer />
+            </>
+          } />
+          <Route path="/courses" element={<Course />} />
         </Routes>
-        <Footer />
       </div>
     </Router>
   );
