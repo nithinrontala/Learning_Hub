@@ -138,3 +138,32 @@ body {
 .program-header-apply-btn:hover {
   background: #1251a3;
 }
+
+.program-header-back-btn {
+  position: absolute;
+  top: 24px;
+  left: 24px;
+  background: none;
+  border: none;
+  font-size: 2rem;
+  color: #1976d2;
+  cursor: pointer;
+  z-index: 2;
+  padding: 0 8px 0 0;
+  transition: color 0.2s;
+}
+.program-header-back-btn:hover {
+  color: #1251a3;
+}
+
+.program-header-wishlist {
+  margin-left: 12px;
+  color: #e63946;
+  font-size: 2.4rem;
+  vertical-align: -4.5px;
+  cursor: pointer;
+  transition: color 0.2s;
+}
+.program-header-wishlist:hover {
+  color: #b71c1c;
+}

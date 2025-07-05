@@ -1,5 +1,6 @@
 // NOTE: Do not use any CSS from other files. Only use styles from ProgramHeader.css for this component, now and in the future.
-import React from 'react';
+import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import CourseNavbar from './CourseNavbar';
 import './ProgramHeader.css';
 
@@ -13,16 +14,38 @@ const mlCourse = {
 };
 
 const ProgramHeader = () => {
+  const navigate = useNavigate();
+  const [wishlisted, setWishlisted] = useState(false);
   return (
     <div>
       <CourseNavbar />
       <div className="program-header-container">
+        <button
+          className="program-header-back-btn"
+          onClick={() => navigate('/courses')}
+          aria-label="Back to Courses"
+        >
+          &#8592;
+        </button>
         <nav className="program-header-breadcrumb">
           {/* <span className="program-header-link">Programs</span> */}
           {/* <span className="program-header-separator">/</span> */}
           {/* <span className="program-header-category">Machine Learning</span> */}
         </nav>
-        <h1 className="program-header-title">{mlCourse.title}</h1>
+        <h1 className="program-header-title">
+          {mlCourse.title}
+          <span
+            className="program-header-wishlist"
+            title={wishlisted ? 'Remove from Wishlist' : 'Add to Wishlist'}
+            onClick={() => setWishlisted(w => !w)}
+            role="button"
+            aria-pressed={wishlisted}
+            tabIndex={0}
+            onKeyPress={e => { if (e.key === 'Enter' || e.key === ' ') setWishlisted(w => !w); }}
+          >
+            {wishlisted ? '❤' : '♡'}
+          </span>
+        </h1>
         <p className="program-header-description">
           {mlCourse.description}
         </p>
