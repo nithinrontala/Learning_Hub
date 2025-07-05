@@ -31,12 +31,27 @@
   gap: 1rem;
 }
 
+.course-navbar-search-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
 .course-navbar-search {
   padding: 0.5rem 1.5rem;
+  padding-right: 2.2rem;
   border-radius: 8px;
   border: 1px solid #e0e0e0;
   background: #f5f7fa;
   min-width: 120px;
+}
+
+.course-navbar-search-icon {
+  position: absolute;
+  right: 0.8rem;
+  font-size: 1.1rem;
+  color: #888;
+  pointer-events: none;
 }
 
 .course-navbar-wishlist {
@@ -57,6 +72,23 @@
   width: 36px;
   height: 36px;
   border-radius: 50%;
+}
+
+.course-navbar-search-go {
+  padding: 0.45rem 1.1rem;
+  border-radius: 0 8px 8px 0;
+  border: 0.8px solid #e0e0e0;
+  background: #2563eb;
+  color: #fff;
+  font-weight: 500;
+  font-size: 0.9rem;
+  margin-left: -1px;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.course-navbar-search-go:hover {
+  background: #1741a6;
 }
 
 @media (max-width: 900px) {
