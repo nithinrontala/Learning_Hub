@@ -4,11 +4,32 @@
 
 .program-header-container {
   background: #fff;
-  padding: 40px 32px 24px 32px;
-  border-radius: 8px;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.03);
+  padding: 32px 40px 28px 40px;
+  border-radius: 12px;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.06);
   margin: 32px auto;
-  max-width: 900px;
+  max-width: 1200px;
+  min-height: 620px;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  box-sizing: border-box;
+}
+
+html, body, #root {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+body {
+  min-height: 100vh;
+  background: #f7f8fa;
+}
+
+.App {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
 }
 
 .program-header-breadcrumb {
@@ -42,10 +63,31 @@
 
 .program-header-details {
   display: flex;
-  gap: 48px;
+  flex-direction: column;
   border-top: 1px solid #e5e7eb;
   padding-top: 18px;
   font-size: 1rem;
+  margin-bottom: 32px;
+  gap: 0;
+}
+.program-header-details-row {
+  display: flex;
+  gap: 48px;
+  margin-bottom: 0;
+}
+.program-header-details-startdate {
+  margin-top: 12px;
+  width: 50%;
+  min-width: 180px;
+}
+@media (max-width: 700px) {
+  .program-header-details-row {
+    flex-direction: column;
+    gap: 0;
+  }
+  .program-header-details-startdate {
+    width: 100%;
+  }
 }
 .program-header-detail-label {
   color: #6b7280;
@@ -54,4 +96,45 @@
 .program-header-detail-value {
   font-weight: 500;
   color: #22223b;
+}
+
+.program-header-description-section {
+  margin-top: 32px;
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.03);
+  padding: 32px 32px 32px 32px;
+  max-width: 900px;
+  margin-left: auto;
+  margin-right: auto;
+  box-sizing: border-box;
+}
+.program-header-section-title {
+  font-size: 1.2rem;
+  font-weight: 700;
+  margin-bottom: 10px;
+  text-align: left;
+}
+.program-header-section-desc {
+  color: #22223b;
+  font-size: 1.05rem;
+  margin-bottom: 24px;
+  text-align: left;
+}
+.program-header-apply-btn {
+  background: #1976d2;
+  color: #fff;
+  border: none;
+  border-radius: 7px;
+  padding: 12px 36px;
+  font-size: 1.08rem;
+  font-weight: 600;
+  cursor: pointer;
+  position: absolute;
+  right: 40px;
+  bottom: 28px;
+  margin-top: 10px;
+}
+.program-header-apply-btn:hover {
+  background: #1251a3;
 }
