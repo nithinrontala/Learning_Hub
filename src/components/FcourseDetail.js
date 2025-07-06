@@ -110,7 +110,7 @@ function FcourseDetail() {
         </div>
         <h2 className="fcoursed-section-title">Program Description</h2>
         <p className="fcoursed-section-desc">{course.programDescription}</p>
-        <button className="fcoursed-apply-btn">Apply Now</button>
+        <button className="fcoursed-apply-btn" onClick={() => navigate('/apply')}>Apply Now</button>
       </div>
     </div>
   );

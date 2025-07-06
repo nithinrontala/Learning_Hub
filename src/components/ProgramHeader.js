@@ -85,7 +85,7 @@ const ProgramHeader = () => {
         </div>
         <h2 className="program-header-section-title">Program Description</h2>
         <p className="program-header-section-desc">{course.programDescription}</p>
-        <button className="program-header-apply-btn">Apply Now</button>
+        <button className="program-header-apply-btn" onClick={() => navigate('/apply')}>Apply Now</button>
       </div>
     </div>
   );
