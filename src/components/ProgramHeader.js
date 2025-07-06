@@ -1,6 +1,6 @@
 // NOTE: Do not use any CSS from other files. Only use styles from ProgramHeader.css for this component, now and in the future.
 import React, { useState } from 'react';
-import { useNavigate, useParams } from 'react-router-dom';
+import { useNavigate, useParams, useLocation } from 'react-router-dom';
 import CourseNavbar from './CourseNavbar';
 import './ProgramHeader.css';
 import courses from './coursesData';
@@ -15,14 +15,16 @@ const getEndDate = (startDate, duration) => {
 
 const ProgramHeader = () => {
   const navigate = useNavigate();
+  const location = useLocation();
   const { id } = useParams();
   const [wishlisted, setWishlisted] = useState(false);
   const course = courses.find(c => String(c.id) === String(id));
+  const page = location.state?.page;
 
   if (!course) {
     return (
       <div className="program-header-container">
-        <button className="program-header-back-btn" onClick={() => navigate('/courses')}>&#8592;</button>
+        <button className="program-header-back-btn" onClick={() => navigate('/courses' + (page ? `?page=${page}` : ''))}>&#8592;</button>
         <h1>Course Not Found</h1>
         <p>The course you are looking for does not exist.</p>
       </div>
@@ -32,12 +34,15 @@ const ProgramHeader = () => {
   const endDate = getEndDate(course.startDate, course.duration);
   return (
     <div style={{ position: 'relative', minHeight: '100vh' }}>
-      <div className="program-header-bg" />
+      <div
+        className="program-header-bg"
+        style={{ backgroundImage: `url('${course.image}')` }}
+      />
       <CourseNavbar />
       <div className="program-header-container">
         <button
           className="program-header-back-btn"
-          onClick={() => navigate('/courses')}
+          onClick={() => navigate('/courses' + (page ? `?page=${page}` : ''))}
           aria-label="Back to Courses"
         >
           &#8592;

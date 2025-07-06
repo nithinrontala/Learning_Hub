@@ -8,9 +8,7 @@ const courses = [
     startDate: '2025-07-15',
     image: 'https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=400&q=80',
     category: 'Technology',
-    programDescription: `Gain a solid foundation in machine learning by exploring key concepts such as supervised and unsupervised learning, model evaluation, and feature engineering. This program emphasizes practical skills through hands-on projects, enabling you to build, train, and deploy basic machine learning models using real-world datasets. This course also introduces you to the core principles of machine learning, including data preprocessing, algorithm selection, and performance metrics. You’ll work with popular tools and libraries, and develop the ability to solve classification and regression problems, preparing you for more advanced studies in AI.
-
-You will also learn about the ethical implications of machine learning, how to avoid common pitfalls, and how to interpret model results. By the end of this course, you will have built several projects and be ready to tackle more advanced AI topics.` 
+    programDescription: `Gain a solid foundation in machine learning by exploring key concepts such as supervised and unsupervised learning, model evaluation, and feature engineering. This program emphasizes practical skills through hands-on projects, enabling you to build, train, and deploy basic machine learning models using real-world datasets. You’ll work with popular tools and libraries, and develop the ability to solve classification and regression problems, preparing you for more advanced studies in AI.`
   },
   {
     id: 2,

@@ -11,11 +11,11 @@ function getEndDate(startDate, duration) {
   return end.toISOString().slice(0, 10);
 }
 
-function CourseCard({ course }) {
+function CourseCard({ course, currentPage }) {
   const navigate = useNavigate();
 
   const handleClick = () => {
-    navigate(`/program/${course.id}`);
+    navigate(`/program/${course.id}`, { state: { page: currentPage } });
   };
 
   const endDate = getEndDate(course.startDate, course.duration);
