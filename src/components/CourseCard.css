@@ -16,7 +16,7 @@
   box-shadow: 0 4px 16px rgba(45, 114, 217, 0.18);
   transform: translateY(-4px) scale(1.03);
   transition: box-shadow 0.2s, transform 0.2s;
-  border: 1.5px solid #2d72d9;
+  border: 0.1px solid #6190d7;
 }
 
 .course-card-image {
