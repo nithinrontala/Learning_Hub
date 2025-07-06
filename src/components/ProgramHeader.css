@@ -162,10 +162,19 @@ body {
   font-size: 2.4rem;
   vertical-align: -4.5px;
   cursor: pointer;
-  transition: color 0.2s;
+  transition: 
+    color 0.2s,
+    background 0.22s,
+    box-shadow 0.22s;
+  border-radius: 7px;
+  padding: 2px 8px;
+  background: none;
+  box-shadow: none;
 }
 .program-header-wishlist:hover {
-  color: #b71c1c;
+  color: #fff;
+  background: #e63946;
+  box-shadow: 0 2px 12px 0 rgba(230,57,70,0.18), 0 1.5px 4px 0 rgba(230,57,70,0.10);
 }
 
 .program-header-bg {
@@ -182,4 +191,20 @@ body {
   opacity: 0.28;
   filter: brightness(1.18) saturate(1.1);
   pointer-events: none;
+}
+
+.program-header-navbar-links span {
+  margin-right: 1rem;
+  font-size: 1.08rem;
+  font-family: 'Inter', 'Segoe UI', Arial, sans-serif;
+  font-weight: 500;
+  cursor: pointer;
+  color: #222;
+  transition: color 0.2s;
+  padding: 0.25rem 0.5rem;
+  letter-spacing: 0.01em;
+}
+
+.program-header-navbar-links span:hover {
+  color: #007bff;
 }

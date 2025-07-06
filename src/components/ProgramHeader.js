@@ -34,7 +34,10 @@ const ProgramHeader = () => {
   const endDate = getEndDate(course.startDate, course.duration);
   return (
     <div style={{ position: 'relative', minHeight: '100vh' }}>
-      <div className="program-header-bg" />
+      <div
+        className="program-header-bg"
+        style={{ backgroundImage: `url('${course.image}')` }}
+      />
       <CourseNavbar />
       <div className="program-header-container">
         <button

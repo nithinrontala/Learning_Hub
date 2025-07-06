@@ -20,9 +20,19 @@
 }
 
 .course-navbar-links span {
-  margin-right: 2rem;
-  font-size: 1rem;
+  margin-right: 1rem;
+  font-size: 1.08rem;
+  font-family: 'Inter', 'Segoe UI', Arial, sans-serif;
+  font-weight: 500;
   cursor: pointer;
+  color: #222;
+  transition: color 0.2s;
+  padding: 0.25rem 0.5rem;
+  letter-spacing: 0.01em;
+}
+
+.course-navbar-links span:hover {
+  color: #007bff;
 }
 
 .course-navbar-right {
@@ -61,6 +71,13 @@
   border-radius: 8px;
   padding: 0.5rem 1.5rem;
   cursor: pointer;
+  transition: background 0.2s, color 0.2s, box-shadow 0.2s;
+}
+
+.course-navbar-wishlist:hover {
+  background: #e2e6ea;
+  /* color: #1976d2; */
+  box-shadow: 0 2px 8px rgba(0,123,255,0.08);
 }
 
 .course-navbar-bell {
