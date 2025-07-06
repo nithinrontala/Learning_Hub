@@ -11,7 +11,6 @@ function ApplicationForm() {
     graduationYear: '',
     statement: '',
   });
-  const [submitted, setSubmitted] = useState(false);
   const navigate = useNavigate();
   const [isHovered, setIsHovered] = useState(false);
 
@@ -22,8 +21,8 @@ function ApplicationForm() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    setSubmitted(true);
     // Here you can handle form submission (e.g., send to API)
+    navigate('/application-submitted');
   };
 
   return (
@@ -125,11 +124,6 @@ function ApplicationForm() {
           >
             Submit
           </button>
-          {submitted && (
-            <div style={{ color: 'green', textAlign: 'center', marginTop: 10 }}>
-              Application submitted!
-            </div>
-          )}
         </form>
       </div>
     </div>

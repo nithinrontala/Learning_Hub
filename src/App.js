@@ -10,6 +10,7 @@ import Course from './components/Course';
 import ProgramHeader from './components/ProgramHeader';
 import FcourseDetail from './components/FcourseDetail';
 import ApplicationForm from './components/ApplicationForm';
+import ApplicationSubmitted from './components/ApplicationSubmitted';
 import './App.css';
 
 function App() {
@@ -43,6 +44,7 @@ function App() {
           <Route path="/program/:id" element={<ProgramHeader />} />
           <Route path="/fcourse/:id" element={<FcourseDetail />} />
           <Route path="/apply" element={<ApplicationForm />} />
+          <Route path="/application-submitted" element={<ApplicationSubmitted />} />
         </Routes>
       </div>
     </Router>
