@@ -8,6 +8,7 @@ import Login from './components/Login';
 import Signup from './components/Signup';
 import Course from './components/Course';
 import ProgramHeader from './components/ProgramHeader';
+import FcourseDetail from './components/FcourseDetail';
 import './App.css';
 
 function App() {
@@ -39,6 +40,7 @@ function App() {
           } />
           <Route path="/courses" element={<Course />} />
           <Route path="/program/:id" element={<ProgramHeader />} />
+          <Route path="/fcourse/:id" element={<FcourseDetail />} />
         </Routes>
       </div>
     </Router>

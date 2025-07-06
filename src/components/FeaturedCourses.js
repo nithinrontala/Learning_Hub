@@ -1,4 +1,5 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 import './FeaturedCourses.css';
 
 const courses = [
@@ -23,12 +24,18 @@ const courses = [
 ];
 
 function FeaturedCourses() {
+  const navigate = useNavigate();
   return (
     <section className="featured-courses-section">
       <h2>Featured Courses</h2>
       <div className="courses-list">
         {courses.map((course, idx) => (
-          <div className="Featured-course-card" key={idx}>
+          <div
+            className="Featured-course-card"
+            key={idx}
+            style={{ cursor: 'pointer' }}
+            onClick={() => navigate(`/fcourse/${idx + 1}`)}
+          >
             <div className="course-info">
               <div className="course-duration">Duration: {course.duration}</div>
               <div className="course-title">{course.title}</div>

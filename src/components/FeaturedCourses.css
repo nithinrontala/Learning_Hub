@@ -34,7 +34,7 @@
   width: 100%;
   max-width: 1100px;
   min-height: 150px;
-  /* transition: all 0.3s ease-in-out; */
+  transition: all 0.3s ease-in-out;
 }
 
 .Featured-course-card:hover {
