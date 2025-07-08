@@ -13,6 +13,7 @@ import ApplicationForm from './components/ApplicationForm';
 import ApplicationSubmitted from './components/ApplicationSubmitted';
 import './App.css';
 import About from './components/About';
+import Contact from './components/Contact';
 
 function App() {
   return (
@@ -53,6 +54,13 @@ function App() {
           <Route path="/fcourse/:id" element={<FcourseDetail />} />
           <Route path="/apply" element={<ApplicationForm />} />
           <Route path="/application-submitted" element={<ApplicationSubmitted />} />
+          <Route path="/contact" element={
+            <>
+              <Navbar />
+              <Contact />
+              <Footer />
+            </>
+          } />
           <Route path="/about" element={
             <>
               <Navbar />

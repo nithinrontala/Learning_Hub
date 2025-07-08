@@ -1,0 +1,134 @@
+.contact-container {
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  align-items: flex-start;
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 40px 16px 0 16px;
+  gap: 480px;
+  font-family: 'Inter', Arial, sans-serif;
+}
+
+.contact-left {
+  flex: 1.2;
+  min-width: 320px;
+  max-width: 540px;
+}
+.contact-left h1 {
+  font-size: 2.2rem;
+  font-weight: 800;
+  margin-bottom: 8px;
+}
+.contact-subtext {
+  color: #6b7280;
+  margin-bottom: 28px;
+}
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+.contact-input, .contact-textarea {
+  background: #f3f4f6;
+  border: none;
+  border-radius: 12px;
+  padding: 18px 16px;
+  font-size: 1.08rem;
+  color: #222;
+  outline: none;
+  transition: box-shadow 0.2s;
+}
+.contact-input:focus, .contact-textarea:focus {
+  box-shadow: 0 0 0 2px #1976ed33;
+}
+.contact-btn {
+  background: #1976ed;
+  color: #fff;
+  font-weight: 600;
+  border: none;
+  border-radius: 22px;
+  padding: 12px 28px;
+  font-size: 1.08rem;
+  cursor: pointer;
+  margin-top: 8px;
+  transition: background 0.2s;
+  width: fit-content;
+}
+.contact-btn:hover {
+  background: #125bb5;
+}
+
+.contact-right {
+  min-width: 260px;
+  max-width: 340px;
+  /* display: flex; */
+  flex-direction: column;
+  gap: 18px;
+  align-items: center;
+  margin-left: auto;
+}
+.contact-right h2 {
+  font-size: 1.2rem;
+  font-weight: 700;
+  margin-bottom: 10px;
+  align-self: flex-start;
+}
+.contact-info-list {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  width: 100%;
+}
+.contact-info-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+}
+.contact-icon {
+  font-size: 1.5rem;
+  margin-top: 2px;
+}
+.contact-info-label {
+  font-weight: 600;
+  font-size: 1.01rem;
+  display: inline-block;
+    width: 160px;
+}
+.contact-info-value {
+  color: #6b7280;
+  font-size: 0.98rem;
+}
+.contact-map-img {
+  margin-top: 12px;
+  width: 100%;
+  display: fit-content;
+  justify-content: flex-end;
+}
+.contact-map-img img {
+  width: 220px;
+  max-width: 100%;
+  border-radius: 12px;
+  object-fit: cover;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+}
+
+@media (max-width: 900px) {
+  .contact-container {
+    flex-direction: column;
+    gap: 32px;
+  }
+  .contact-right {
+    align-items: flex-start;
+    max-width: 100%;
+    width: 100%;
+    margin-left: 0;
+  }
+  .contact-map-img {
+    justify-content: flex-start;
+  }
+  .contact-map-img img {
+    max-width: 100%;
+    width: 100%;
+  }
+}
