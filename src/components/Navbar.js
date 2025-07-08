@@ -12,8 +12,8 @@ function Navbar() {
       <ul className="navbar-links">
         <li><Link to="/">Home</Link></li>
         <li><Link to="/courses">Courses</Link></li>
-        <li><a href="#about">About</a></li>
-        <li><a href="#contact">Contact</a></li>
+        <li><Link to="/about">About</Link></li>
+        <li><Link to="/contact">Contact</Link></li>
       </ul>
       <div className="navbar-actions">
         <Link to="/signup" className="btn btn-signup">Sign Up</Link>
