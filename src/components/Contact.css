@@ -60,13 +60,12 @@
 }
 
 .contact-right {
-  flex: 0 0 340px;
   min-width: 260px;
   max-width: 340px;
   /* display: flex; */
   flex-direction: column;
   gap: 18px;
-  align-items: flex-end;
+  align-items: center;
   margin-left: auto;
 }
 .contact-right h2 {
@@ -93,6 +92,8 @@
 .contact-info-label {
   font-weight: 600;
   font-size: 1.01rem;
+  display: inline-block;
+    width: 160px;
 }
 .contact-info-value {
   color: #6b7280;
@@ -101,7 +102,7 @@
 .contact-map-img {
   margin-top: 12px;
   width: 100%;
-  display: flex;
+  display: fit-content;
   justify-content: flex-end;
 }
 .contact-map-img img {

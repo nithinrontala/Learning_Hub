@@ -1,6 +1,7 @@
 import React from 'react';
 import './Contact.css';
 
+
 function Contact() {
   return (
     <div className="contact-container">
@@ -29,14 +30,21 @@ function Contact() {
             <span className="contact-icon">📞</span>
             <div>
               <div className="contact-info-label">Phone</div>
-              <div className="contact-info-value">xxxxxxxxxxxx</div>
+              <div className="contact-info-value">+91 xxxxxxxxxx</div>
             </div>
           </div>
           <div className="contact-info-item">
             <span className="contact-icon">📍</span>
             <div>
               <div className="contact-info-label">Address</div>
-              <div className="contact-info-value">xxxx global  pin xxxxxxx</div>
+              <div className="contact-info-value">pin 500032</div>
+            </div>
+          </div>
+          <div className="contact-info-item">
+            <span className="contact-icon">🌐</span>
+            <div>
+              <div className="contact-info-label">Website</div>
+              <div className="contact-info-value">www.edusite.com</div>
             </div>
           </div>
         </div>
