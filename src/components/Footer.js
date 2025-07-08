@@ -1,5 +1,6 @@
 import React from 'react';
 import './Footer.css';
+import { Link } from 'react-router-dom';
 
 function Footer() {
   return (
@@ -7,7 +8,7 @@ function Footer() {
       <div className="footer-links">
         <a href="#terms">Terms of Service</a>
         <a href="#privacy">Privacy Policy</a>
-        <a href="#contact">Contact Us</a>
+        <Link to ="/contact">Contact Us</Link>
       </div>
       <div className="footer-social">
         <a href="#twitter" aria-label="Twitter" className="footer-icon">{/* Twitter */}
@@ -21,7 +22,7 @@ function Footer() {
         </a>
       </div>
       <div className="footer-copy">
-        &copy;2024 Learning Hub. All rights reserved.
+        &copy;2025 Learning Hub. All rights reserved.
       </div>
     </footer>
   );

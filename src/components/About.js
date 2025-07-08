@@ -3,12 +3,12 @@ import './About.css';
 
 const teamMembers = [
   {
-    name: 'Dr. Anya Sharma',
+    name: 'Dr. Sharma',
     title: 'CEO & Founder',
     img: 'https://randomuser.me/api/portraits/women/44.jpg',
   },
   {
-    name: 'Ethan Carter',
+    name: 'Anil Johnson',
     title: 'Head of Curriculum',
     img: 'https://randomuser.me/api/portraits/men/32.jpg',
   },
@@ -18,7 +18,7 @@ const teamMembers = [
     img: 'https://randomuser.me/api/portraits/women/65.jpg',
   },
   {
-    name: 'Noah Thompson',
+    name: 'Sandeep Thompson',
     title: 'Community Manager',
     img: 'https://randomuser.me/api/portraits/men/41.jpg',
   },
@@ -29,7 +29,7 @@ function About() {
     <div className="about-container">
       <section className="about-hero">
         <div className="about-hero-img">
-          <img src="https://img.freepik.com/free-vector/online-learning-concept-illustration_114360-5325.jpg" alt="Learning Hub" />
+          <img src="https://preview.redd.it/learning-hub-at-work-this-was-a-rejected-concept-but-i-v0-7u2pi5upyijc1.jpg?width=640&crop=smart&auto=webp&s=8b221952b3fd6e5e024ec3cb67407c180d9243e6" alt="Learning Hub" />
         </div>
         <div className="about-hero-content">
           <h1>Empowering Learning Through Technology</h1>
