@@ -12,6 +12,7 @@ import FcourseDetail from './components/FcourseDetail';
 import ApplicationForm from './components/ApplicationForm';
 import ApplicationSubmitted from './components/ApplicationSubmitted';
 import './App.css';
+import About from './components/About';
 
 function App() {
   return (
@@ -40,11 +41,25 @@ function App() {
               <Footer />
             </>
           } />
+          <Route path="/about" element={
+            <>
+              <Navbar />
+              <About />
+              <Footer />
+            </>
+          } />
           <Route path="/courses" element={<Course />} />
           <Route path="/program/:id" element={<ProgramHeader />} />
           <Route path="/fcourse/:id" element={<FcourseDetail />} />
           <Route path="/apply" element={<ApplicationForm />} />
           <Route path="/application-submitted" element={<ApplicationSubmitted />} />
+          <Route path="/about" element={
+            <>
+              <Navbar />
+              <About />
+              <Footer />
+            </>
+          } />
         </Routes>
       </div>
     </Router>

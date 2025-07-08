@@ -1,0 +1,158 @@
+.about-container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 32px 16px 0 16px;
+  font-family: 'Inter', Arial, sans-serif;
+  color: #222;
+}
+
+.about-hero {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 40px;
+  margin-bottom: 48px;
+}
+
+.about-hero-img img {
+  width: 320px;
+  max-width: 100%;
+  border-radius: 16px;
+  box-shadow: 0 4px 24px rgba(0,0,0,0.07);
+}
+
+.about-hero-content {
+  flex: 1;
+  min-width: 260px;
+}
+
+.about-hero-content h1 {
+  font-size: 2.5rem;
+  font-weight: 800;
+  margin-bottom: 16px;
+  line-height: 1.1;
+}
+
+.about-hero-content p {
+  font-size: 1.1rem;
+  margin-bottom: 24px;
+  color: #444;
+}
+
+.about-btn {
+  display: inline-block;
+  background: #1976ed;
+  color: #fff;
+  font-weight: 600;
+  padding: 12px 32px;
+  border-radius: 24px;
+  text-decoration: none;
+  transition: background 0.2s;
+  margin-top: 8px;
+}
+.about-btn:hover {
+  background: #125bb5;
+}
+
+.about-mission {
+  margin-bottom: 48px;
+}
+.about-mission h2 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+.about-mission p {
+  color: #444;
+  font-size: 1.08rem;
+}
+
+.about-team {
+  margin-bottom: 48px;
+}
+.about-team h2 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: 18px;
+}
+.about-team-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 32px;
+}
+.about-team-member {
+  background: #f7f8fa;
+  border-radius: 16px;
+  padding: 24px 18px 16px 18px;
+  text-align: center;
+  width: 200px;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.04);
+}
+.about-team-member img {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 12px;
+}
+.about-team-info h3 {
+  font-size: 1.08rem;
+  font-weight: 600;
+  margin-bottom: 2px;
+}
+.about-team-info p {
+  color: #666;
+  font-size: 0.98rem;
+}
+
+.about-impact {
+  margin-bottom: 48px;
+}
+.about-impact h2 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: 18px;
+}
+.about-impact-stats {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 24px;
+  margin-bottom: 18px;
+}
+.about-impact-card {
+  background: #f7f8fa;
+  border-radius: 14px;
+  padding: 18px 32px;
+  min-width: 180px;
+  text-align: center;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.03);
+}
+.about-impact-card h3 {
+  font-size: 1.08rem;
+  font-weight: 600;
+  margin-bottom: 6px;
+}
+.about-impact-number {
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: #1976ed;
+}
+.about-impact-desc {
+  color: #444;
+  margin-bottom: 18px;
+  font-size: 1.05rem;
+}
+
+@media (max-width: 900px) {
+  .about-hero {
+    flex-direction: column;
+    gap: 24px;
+  }
+  .about-team-list {
+    gap: 18px;
+  }
+  .about-impact-stats {
+    flex-direction: column;
+    gap: 12px;
+  }
+}
