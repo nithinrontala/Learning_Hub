@@ -1,0 +1,79 @@
+/* WishlistPage.css */
+
+.wishlist-page {
+  background-color: #f8fafc;
+  min-height: 100vh;
+}
+
+/* WishlistNavSimple component styles */
+.wishlist-nav-simple {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: white;
+  padding: 18px 40px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  border-radius: 12px;
+  margin-bottom: 0;
+}
+
+.wishlist-nav-logo {
+  font-weight: 450;
+  font-size: 1.5rem;
+  color: black;
+}
+
+.wishlist-nav-links {
+  display: flex;
+  gap: 2.5rem;
+  font-size: 1.08rem;
+  font-weight: 450;
+}
+
+.wishlist-nav-links a {
+  color: #222;
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.wishlist-nav-links a:hover {
+  color: #0a74ff;
+}
+
+/* WishlistPage component styles */
+.wishlist-container {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 32px;
+}
+
+.wishlist-container h2 {
+  font-size: 2rem;
+  margin-bottom: 24px;
+  color: #1a202c;
+}
+
+.empty-wishlist {
+  text-align: center;
+  padding: 40px;
+  font-size: 1.2rem;
+  color: #718096;
+  background-color: #fff;
+  border-radius: 8px;
+  border: 1px dashed #e2e8f0;
+}
+
+.wishlist-course-list {
+  list-style: none;
+  padding: 0;
+  display: grid;
+  /* Create a responsive grid that fills columns with cards at least 300px wide */
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 2rem;
+  justify-items: center; /* Center cards within their grid cell */
+}
+
+.wishlist-course-item {
+  /* The `gap` property on the grid container now handles spacing. */
+  width: 100%;
+}
