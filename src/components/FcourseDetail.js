@@ -47,7 +47,10 @@ function FcourseDetail() {
   const { id } = useParams();
   const navigate = useNavigate();
   const course = featuredCourses.find(c => String(c.id) === String(id));
-  const [wishlisted, setWishlisted] = useState(false);
+  const [wishlisted, setWishlisted] = useState(() => {
+    const wishlist = JSON.parse(localStorage.getItem('wishlist')) || [];
+    return wishlist.includes(Number(id));
+  });
   if (!course) return <div style={{ padding: 40 }}>Course Not Found</div>;
   return (
     <div style={{ position: 'relative', minHeight: '100vh' }}>
@@ -68,11 +71,28 @@ function FcourseDetail() {
           <span
             className="fcoursed-wishlist"
             title={wishlisted ? 'Remove from Wishlist' : 'Add to Wishlist'}
-            onClick={() => setWishlisted(w => !w)}
+            onClick={() => {
+              const wishlist = JSON.parse(localStorage.getItem('wishlist')) || [];
+              const isWishlisted = wishlist.includes(Number(id));
+              const updatedWishlist = isWishlisted
+                ? wishlist.filter(courseId => courseId !== Number(id))
+                : [...wishlist, Number(id)];
+              localStorage.setItem('wishlist', JSON.stringify(updatedWishlist));
+              setWishlisted(!isWishlisted);
+            }}
             role="button"
             aria-pressed={wishlisted}
             tabIndex={0}
-            onKeyPress={e => { if (e.key === 'Enter' || e.key === ' ') setWishlisted(w => !w); }}
+            onKeyPress={e => {
+              if (e.key === 'Enter' || e.key === ' ') {
+                const wishlist = JSON.parse(localStorage.getItem('wishlist')) || [];                const isWishlisted = wishlist.includes(Number(id));
+                const updatedWishlist = isWishlisted
+                  ? wishlist.filter(courseId => courseId !== Number(id))
+                  : [...wishlist, Number(id)];
+                localStorage.setItem('wishlist', JSON.stringify(updatedWishlist));
+                setWishlisted(!isWishlisted);
+              }
+            }}
           >
             {wishlisted ? '❤' : '♡'}
           </span>
