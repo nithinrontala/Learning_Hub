@@ -18,7 +18,7 @@ function CourseNavbar() {
           <input type="text" placeholder="Search" className="course-navbar-search" />
           <button className="course-navbar-search-go">Go</button>
         </div>
-        <button className="course-navbar-wishlist">Wishlist</button>
+        <button className="course-navbar-wishlist" onClick={() => navigate('/wishlist')}>Wishlist</button>
         <span className="course-navbar-bell">&#128276;</span>
         <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="profile" className="course-navbar-profile" />
       </div>
