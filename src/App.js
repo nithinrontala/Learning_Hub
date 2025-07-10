@@ -14,6 +14,7 @@ import ApplicationSubmitted from './components/ApplicationSubmitted';
 import './App.css';
 import About from './components/About';
 import Contact from './components/Contact';
+import WishlistPage from './components/WishlistPage';
 
 function App() {
   return (
@@ -68,6 +69,7 @@ function App() {
               <Footer />
             </>
           } />
+          <Route path="/wishlist" element={<WishlistPage />} />
         </Routes>
       </div>
     </Router>
