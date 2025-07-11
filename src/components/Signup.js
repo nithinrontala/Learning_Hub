@@ -1,16 +1,18 @@
 import React, { useState } from 'react';
 import './Auth.css';
+import { useNavigate } from 'react-router-dom';
 
 function Signup() {
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [confirmPassword, setConfirmPassword] = useState('');
+  const navigate = useNavigate();
 
   const handleSubmit = (e) => {
     e.preventDefault();
     // Add signup logic here
-    alert('Signup submitted!');
+    navigate('/login');
   };
 
   return (
