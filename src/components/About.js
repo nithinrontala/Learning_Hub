@@ -43,7 +43,14 @@ function About() {
       <section className="about-mission">
         <h2>Our Mission</h2>
         <p>
-          At Learning Hub, we're driven by a passion for education and a belief in the transformative power of technology. We strive to create a vibrant learning community where individuals can connect, collaborate, and achieve their full potential. Our platform offers a diverse range of programs, from foundational skills to advanced specializations, designed to meet the evolving needs of learners in today's dynamic world.
+          At Learning Hub, our mission is to democratize education and empower individuals through accessible, innovative, and high-quality learning experiences. We are dedicated to fostering a vibrant community where everyone can unlock their full potential and achieve lifelong success.
+        </p>
+      </section>
+      
+      <section className="about-vision">
+        <h2>Our Vision</h2>
+        <p>
+          To be a global leader in online education, inspiring and enabling learners everywhere to shape a better future for themselves and their communities.
         </p>
       </section>
 
