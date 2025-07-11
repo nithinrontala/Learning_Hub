@@ -39,6 +39,19 @@ function Contact() {
             onChange={handleChange}
             required
           />
+          <select
+            name="reason"
+            className="contact-input"
+            value={formData.reason || ''}
+            onChange={handleChange}
+            required
+          >
+            <option value="" disabled>Select Reason for Contact</option>
+            <option value="support">Support</option>
+            <option value="partnership">Partnership</option>
+            <option value="feedback">Feedback</option>
+            <option value="other">Other</option>
+          </select>
           <input
             type="text"
             name="subject"
@@ -61,6 +74,11 @@ function Contact() {
           {success && (
             <div className="contact-success">Thank you! Your message has been sent.</div>
           )}
+          <div className="contact-privacy">
+            <small>
+              <strong>Privacy Notice:</strong> Your information is used only to respond to your inquiry and will not be shared with third parties. For more details, see our <a href="/privacy" target="_blank" rel="noopener noreferrer">Privacy Policy</a>.
+            </small>
+          </div>
         </form>
       </div>
       <div className="contact-right">
