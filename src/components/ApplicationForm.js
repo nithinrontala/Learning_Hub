@@ -35,7 +35,7 @@ function ApplicationForm() {
     formData.append('statement', form.statement);
 
     try {
-      const response = await fetch('https://formspree.io/f/xeokyrgn', {
+      const response = await fetch('https://formspree.io/f/xvgredyz', {
         method: 'POST',
         body: formData,
       });
