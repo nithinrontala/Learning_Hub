@@ -11,18 +11,46 @@ function ApplicationForm() {
     graduationYear: '',
     statement: '',
   });
-  const navigate = useNavigate();
+
+  const [isSubmitting, setIsSubmitting] = useState(false);
   const [isHovered, setIsHovered] = useState(false);
+  const navigate = useNavigate();
 
   const handleChange = (e) => {
     const { name, value } = e.target;
     setForm((prev) => ({ ...prev, [name]: value }));
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    // Here you can handle form submission (e.g., send to API)
-    navigate('/application-submitted');
+    setIsSubmitting(true);
+
+    const formData = new FormData();
+    formData.append('fullName', form.fullName);
+    formData.append('email', form.email);
+    formData.append('phone', form.phone);
+    formData.append('degree', form.degree);
+    formData.append('university', form.university);
+    formData.append('graduationYear', form.graduationYear);
+    formData.append('statement', form.statement);
+
+    try {
+      const response = await fetch('https://formspree.io/f/xeokyrgn', {
+        method: 'POST',
+        body: formData,
+      });
+
+      if (response.ok) {
+        alert('Application submitted successfully!');
+      } else {
+        alert('Failed to submit application. Please try again.');
+      }
+    } catch (error) {
+      alert('An error occurred. Please try again.');
+      navigate('/application-submitted');
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -120,9 +148,20 @@ function ApplicationForm() {
           />
           <button
             type="submit"
-            style={{ marginTop: 18, background: '#0a74ff', color: '#fff', border: 'none', borderRadius: 6, padding: '12px 0', fontWeight: 600, fontSize: 16, cursor: 'pointer' }}
+            disabled={isSubmitting}
+            style={{
+              marginTop: 18,
+              background: isSubmitting ? '#ddd' : '#0a74ff',
+              color: '#fff',
+              border: 'none',
+              borderRadius: 6,
+              padding: '12px 0',
+              fontWeight: 600,
+              fontSize: 16,
+              cursor: isSubmitting ? 'not-allowed' : 'pointer',
+            }}
           >
-            Submit
+            {isSubmitting ? 'Submitting...' : 'Submit'}
           </button>
         </form>
       </div>
