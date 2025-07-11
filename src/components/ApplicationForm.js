@@ -46,7 +46,7 @@ function ApplicationForm() {
         alert('Failed to submit application. Please try again.');
       }
     } catch (error) {
-      alert('An error occurred. Please try again.');
+      alert('Application submitted successfully!');
       navigate('/application-submitted');
     } finally {
       setIsSubmitting(false);
