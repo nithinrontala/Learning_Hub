@@ -23,14 +23,14 @@ function Contact() {
             <span className="contact-icon">📧</span>
             <div>
               <div className="contact-info-label">Email</div>
-              <div className="contact-info-value">support@edusite.com</div>
+              <div className="contact-info-value">learinghubquery@gmail.com</div>
             </div>
           </div>
           <div className="contact-info-item">
             <span className="contact-icon">📞</span>
             <div>
               <div className="contact-info-label">Phone</div>
-              <div className="contact-info-value">+91 xxxxxxxxxx</div>
+              <div className="contact-info-value">+91 6766498489</div>
             </div>
           </div>
           <div className="contact-info-item">
