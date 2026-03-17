@@ -1,5 +1,7 @@
 import React from 'react';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
+import { AuthProvider } from './context/AuthContext';
+import { ProtectedRoute } from './utils/ProtectedRoute';
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
 import FeaturedCourses from './components/FeaturedCourses';
@@ -15,64 +17,110 @@ import './App.css';
 import About from './components/About';
 import Contact from './components/Contact';
 import WishlistPage from './components/WishlistPage';
+import Dashboard from './components/Dashboard';
 
 function App() {
   return (
-    <Router>
-      <div className="App">
-        <Routes>
-          <Route path="/" element={
-            <>
-              <Navbar />
-              <Hero />
-              <FeaturedCourses />
-              <Footer />
-            </>
-          } />
-          <Route path="/login" element={
-            <>
-              <Navbar />
-              <Login />
-              <Footer />
-            </>
-          } />
-          <Route path="/signup" element={
-            <>
-              <Navbar />
-              <Signup />
-              <Footer />
-            </>
-          } />
-          <Route path="/about" element={
-            <>
-              <Navbar />
-              <About />
-              <Footer />
-            </>
-          } />
-          <Route path="/courses" element={<Course />} />
-          <Route path="/program/:id" element={<ProgramHeader />} />
-          <Route path="/fcourse/:id" element={<FcourseDetail />} />
-          <Route path="/apply" element={<ApplicationForm />} />
-          <Route path="/application-submitted" element={<ApplicationSubmitted />} />
-          <Route path="/contact" element={
-            <>
-              <Navbar />
-              <Contact />
-              <Footer />
-            </>
-          } />
-          <Route path="/about" element={
-            <>
-              <Navbar />
-              <About />
-              <Footer />
-            </>
-          } />
-          <Route path="/wishlist" element={<WishlistPage />} />
-        </Routes>
-      </div>
-    </Router>
+    <AuthProvider>
+      <Router>
+        <div className="App">
+          <Routes>
+            {/* Auth Routes */}
+            <Route path="/login" element={
+              <>
+                <Login />
+              </>
+            } />
+            <Route path="/signup" element={
+              <>
+                <Signup />
+              </>
+            } />
+
+            {/* Protected Routes */}
+            <Route path="/" element={
+              <ProtectedRoute>
+                <>
+                  <Navbar />
+                  <Hero />
+                  <FeaturedCourses />
+                  <Footer />
+                </>
+              </ProtectedRoute>
+            } />
+            
+            <Route path="/about" element={
+              <ProtectedRoute>
+                <>
+                  <Navbar />
+                  <About />
+                  <Footer />
+                </>
+              </ProtectedRoute>
+            } />
+            
+            <Route path="/courses" element={
+              <ProtectedRoute>
+                <Course />
+              </ProtectedRoute>
+            } />
+            
+            <Route path="/program/:id" element={
+              <ProtectedRoute>
+                <ProgramHeader />
+              </ProtectedRoute>
+            } />
+            
+            <Route path="/fcourse/:id" element={
+              <ProtectedRoute>
+                <FcourseDetail />
+              </ProtectedRoute>
+            } />
+            
+            <Route path="/apply" element={
+              <ProtectedRoute>
+                <ApplicationForm />
+              </ProtectedRoute>
+            } />
+            
+            <Route path="/application-submitted" element={
+              <ProtectedRoute>
+                <ApplicationSubmitted />
+              </ProtectedRoute>
+            } />
+            
+            <Route path="/contact" element={
+              <ProtectedRoute>
+                <>
+                  <Navbar />
+                  <Contact />
+                  <Footer />
+                </>
+              </ProtectedRoute>
+            } />
+            
+            <Route path="/wishlist" element={
+              <ProtectedRoute>
+                <WishlistPage />
+              </ProtectedRoute>
+            } />
+            
+            <Route path="/dashboard" element={
+              <ProtectedRoute>
+                <>
+                  <Navbar />
+                  <Dashboard />
+                  <Footer />
+                </>
+              </ProtectedRoute>
+            } />
+
+            {/* Catch all - redirect to login */}
+            <Route path="*" element={<Navigate to="/login" replace />} />
+          </Routes>
+        </div>
+      </Router>
+    </AuthProvider>
   );
 }
 
