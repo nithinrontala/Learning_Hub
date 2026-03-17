@@ -10,7 +10,7 @@ const client = new OAuth2Client(
 // Generate JWT Token
 const generateToken = (id) => {
   return jwt.sign({ id }, process.env.JWT_SECRET || 'your-secret-key', {
-    expiresIn: '7d'
+    expiresIn: process.env.JWT_EXPIRY || '30s'
   });
 };
 
